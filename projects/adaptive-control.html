@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en"><!-- InstanceBegin template="/Templates/main.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Adaptive control and estimation — pwr-control</title>
+<meta name="description" content="Compact MATLAB/Simulink projects: model-reference adaptive control of an active suspension and of a textbook plant, harmonic-tracker analysis for grid signals, and a coupled PDE/ODE thermal model.">
+<!-- InstanceEndEditable -->
+<link rel="icon" href="../img/favicon.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img src="../img/logo.svg" alt="pwr-control logo">pwr-control<small>Power Electronics &amp; Control Systems Laboratory</small></a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="../index.html" data-section="home">Home</a></li>
+        <li><a href="../projects.html" data-section="projects">Projects</a></li>
+        <li><a href="../notes.html" data-section="notes">Notes</a></li>
+        <li><a href="../about.html" data-section="about">About</a></li>
+        <li><a class="ext" href="https://github.com/pwr-control/" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+<!-- InstanceBeginEditable name="main" -->
+<div class="wrap">
+  <div class="crumbs"><a href="../index.html">Home</a><span><a href="../projects.html">Projects</a></span><span><a href="../projects.html#control">Electrical machines and control</a></span></div>
+  <div class="page-head">
+    <h1>Adaptive control and estimation</h1>
+    <p class="lead">Compact MATLAB/Simulink projects: model-reference adaptive control of an active suspension and of a textbook plant, harmonic-tracker analysis for grid signals, and a coupled PDE/ODE thermal model.</p>
+    <div class="tags"><span class="tag">MRAC</span><span class="tag">Kalman filter</span><span class="tag">observers</span><span class="tag">PDE/ODE</span><span class="tag">MATLAB</span></div>
+  </div>
+  <div class="project-layout">
+    <div class="project-main">
+<figure class="frame">
+  <img src="../img/figures/adaptive_control.svg" alt="Adaptive control and estimation">
+  <figcaption>Model-reference adaptive control: the adaptation law adjusts the controller so that the plant output follows the reference model.</figcaption>
+</figure>
+
+<h2>What it is</h2>
+<p>A set of small, self-contained projects on adaptive control and on related estimation problems. Each folder has an initialisation script that fills the workspace and, where present, a Simulink model to run afterwards; no external library is needed, apart from one small Simscape component compiled locally.</p>
+<p>Continuous-time designs are discretised explicitly in the scripts (forward Euler or matrix exponential), so that the same gains can be reused in fixed-step Simulink blocks and, later, in C.</p>
+
+<h2>The projects</h2>
+<ul>
+  <li><strong>Active suspension</strong> — MRAC of a single-mass (quarter-car style) active suspension with a speed-bump disturbance, a road-profile observer and a Kalman-filter variant.</li>
+  <li><strong>Textbook example</strong> — model-reference adaptive control of a double integrator with a reference model with prescribed poles, plus a state observer.</li>
+  <li><strong>Harmonic trackers</strong> — discrete-time design of resonant PI, SOGI, phase-shift filter, DDSRF-PLL and first-harmonic-tracker observers for 50 Hz and 400 Hz signals.</li>
+  <li><strong>PDE/ODE thermal model</strong> — explicit finite-difference simulation of a one-dimensional heat-conduction bar coupled with a lumped heater, as a control-oriented modelling exercise.</li>
+</ul>
+
+<nav class="pager" aria-label="Previous and next project"><a href="pmsm-sensorless.html">&larr; PMSM sensorless</a><a href="string-actuated.html">String-actuated &rarr;</a></nav>
+    </div>
+    <aside class="project-aside">
+      <div class="facts">
+        <h3>At a glance</h3>
+        <dl>
+<dt>Methods</dt><dd>MRAC, state observers, Kalman filter</dd>
+<dt>Signals</dt><dd>50 Hz and 400 Hz grid signals</dd>
+<dt>Tools</dt><dd>MATLAB, Simulink, one local Simscape component</dd>
+<dt>Figures</dt><dd>EPS with LaTeX labels</dd>
+        </dl>
+        <h3 style="margin-top:1rem">Resources</h3>
+        <ul>
+<li><a href="https://github.com/pwr-control/adaptive-control" target="_blank" rel="noopener">Repository: adaptive-control</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
+<!-- InstanceEndEditable -->
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; 2026 Davide Bagnara &middot; pwr-control.com &middot; Personal research work, shared as is.</div>
+    <ul>
+      <li><a href="https://github.com/pwr-control/" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/davide-bagnara-633353290/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="mailto:info@pwr-control.com">info@pwr-control.com</a></li>
+    </ul>
+  </div>
+</footer>
+<script>
+/* Marks the current section in the navigation (works on GitHub Pages and in local preview). */
+(function () {
+  var segs = location.pathname.split('/').filter(Boolean);
+  var last = (segs[segs.length - 1] || '').replace(/\.html$/, '');
+  var parent = segs.length > 1 ? segs[segs.length - 2] : '';
+  var section = (last === '' || last === 'index') ? 'home' : (parent === 'projects' ? 'projects' : last);
+  var links = document.querySelectorAll('.site-nav a[data-section]');
+  for (var i = 0; i < links.length; i++) {
+    if (links[i].getAttribute('data-section') === section) { links[i].setAttribute('aria-current', 'page'); }
+  }
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

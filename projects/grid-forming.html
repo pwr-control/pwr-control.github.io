@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en"><!-- InstanceBegin template="/Templates/main.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Active front end on weak grids and grid-forming control — pwr-control</title>
+<meta name="description" content="How a grid-tied active front end behaves on progressively weaker grids, with fault-ride-through tests and reactive-current steps, as the starting point for grid-forming control architectures.">
+<!-- InstanceEndEditable -->
+<link rel="icon" href="../img/favicon.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img src="../img/logo.svg" alt="pwr-control logo">pwr-control<small>Power Electronics &amp; Control Systems Laboratory</small></a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="../index.html" data-section="home">Home</a></li>
+        <li><a href="../projects.html" data-section="projects">Projects</a></li>
+        <li><a href="../notes.html" data-section="notes">Notes</a></li>
+        <li><a href="../about.html" data-section="about">About</a></li>
+        <li><a class="ext" href="https://github.com/pwr-control/" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+<!-- InstanceBeginEditable name="main" -->
+<div class="wrap">
+  <div class="crumbs"><a href="../index.html">Home</a><span><a href="../projects.html">Projects</a></span><span><a href="../projects.html#grid">Power quality and grid interface</a></span></div>
+  <div class="page-head">
+    <h1>Active front end on weak grids and grid-forming control</h1>
+    <p class="lead">How a grid-tied active front end behaves on progressively weaker grids, with fault-ride-through tests and reactive-current steps, as the starting point for grid-forming control architectures.</p>
+    <div class="tags"><span class="tag">AFE 250 kW</span><span class="tag">weak grid</span><span class="tag">FRT</span><span class="tag">resonant PI</span><span class="tag">dq-PLL</span></div>
+  </div>
+  <div class="project-layout">
+    <div class="project-main">
+<figure class="frame">
+  <img src="../img/figures/grid_forming.svg" alt="Active front end on weak grids and grid-forming control">
+  <figcaption>Three-phase AFE modules connected to the emulated grid through a Dyn11 transformer; the short-circuit ratio of the grid emulator is swept from 20 down to 2.</figcaption>
+</figure>
+
+<h2>What it is</h2>
+<p>Grid-following converters rely on a stiff grid voltage to synchronise to; as the short-circuit ratio drops, the interaction between the PLL, the current control and the grid impedance degrades stability. This bench reproduces that behaviour with three-phase AFE modules connected to an emulated grid through a Dyn11 transformer, and is the reference against which the grid-forming control laws are developed.</p>
+<p>The committed configuration runs one 250 kW module; up to four modules in parallel are parameterised, with per-module current references, common-mode compensation for hard paralleling, and individual clocks and PWM phase shifts.</p>
+
+<h2>Control and tests</h2>
+<ul>
+  <li>DC-link voltage PI over resonant PI current control, gains tuned for weak grids; FHT-based dq-PLL, SOGI, positive- and negative-sequence handling.</li>
+  <li>Fault-ride-through layer active: voltage dip at 0.75 s (asymmetric fault type 1) followed by two reactive-current steps at cos&nbsp;&phi; = 0.95.</li>
+  <li><code>run_sim.m</code> runs the model for five grid strengths, short-circuit ratio 20, 6, 4, 3 and 2; plotting and video scripts produce the grid and line quantities around the fault and the sequence powers.</li>
+</ul>
+
+<h2>Status</h2>
+<p>The parameter file configures a grid-following AFE (PLL, resonant PI current control); the grid-forming control law under investigation lives inside the model and is not exposed as parameters yet.</p>
+
+<nav class="pager" aria-label="Previous and next project"><a href="flipped-upqc.html">&larr; F-UPQC</a><a href="single-phase-pll.html">FHT dq-PLL &rarr;</a></nav>
+    </div>
+    <aside class="project-aside">
+      <div class="facts">
+        <h3>At a glance</h3>
+        <dl>
+<dt>Grid emulator</dt><dd>1.25 MVA, 690 V / 50 Hz (400 V and 480 V available)</dd>
+<dt>AFE</dt><dd>250 kW per module, up to 4</dd>
+<dt>Switching</dt><dd>4 kHz, double update, 3 µs dead time</dd>
+<dt>Short-circuit ratio</dt><dd>20, 6, 4, 3, 2</dd>
+<dt>Simulation</dt><dd>3 s</dd>
+        </dl>
+        <h3 style="margin-top:1rem">Resources</h3>
+        <ul>
+<li><a href="https://github.com/pwr-control/pwr-control/blob/main/docs/modularity/modularity.pdf" target="_blank" rel="noopener">Note: Modularity: model and control architecture — paralleled AFE drives, grid filter and power quality (54 pages)</a></li>
+<li><a href="https://github.com/pwr-control/grid-forming" target="_blank" rel="noopener">Repository: grid-forming</a></li>
+<li><a href="https://github.com/pwr-control/library" target="_blank" rel="noopener">Shared library (required)</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
+<!-- InstanceEndEditable -->
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; 2026 Davide Bagnara &middot; pwr-control.com &middot; Personal research work, shared as is.</div>
+    <ul>
+      <li><a href="https://github.com/pwr-control/" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/davide-bagnara-633353290/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="mailto:info@pwr-control.com">info@pwr-control.com</a></li>
+    </ul>
+  </div>
+</footer>
+<script>
+/* Marks the current section in the navigation (works on GitHub Pages and in local preview). */
+(function () {
+  var segs = location.pathname.split('/').filter(Boolean);
+  var last = (segs[segs.length - 1] || '').replace(/\.html$/, '');
+  var parent = segs.length > 1 ? segs[segs.length - 2] : '';
+  var section = (last === '' || last === 'index') ? 'home' : (parent === 'projects' ? 'projects' : last);
+  var links = document.querySelectorAll('.site-nav a[data-section]');
+  for (var i = 0; i < links.length; i++) {
+    if (links[i].getAttribute('data-section') === section) { links[i].setAttribute('aria-current', 'page'); }
+  }
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

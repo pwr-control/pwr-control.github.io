@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en"><!-- InstanceBegin template="/Templates/main.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Resonant CLLC converter — pwr-control</title>
+<meta name="description" content="Bidirectional resonant CLLC as an alternative to the DAB: tank transfer function, simulation in both power directions, losses, transformer sizing and an optimiser for a CLLLC tank.">
+<!-- InstanceEndEditable -->
+<link rel="icon" href="../img/favicon.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img src="../img/logo.svg" alt="pwr-control logo">pwr-control<small>Power Electronics &amp; Control Systems Laboratory</small></a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="../index.html" data-section="home">Home</a></li>
+        <li><a href="../projects.html" data-section="projects">Projects</a></li>
+        <li><a href="../notes.html" data-section="notes">Notes</a></li>
+        <li><a href="../about.html" data-section="about">About</a></li>
+        <li><a class="ext" href="https://github.com/pwr-control/" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+<!-- InstanceBeginEditable name="main" -->
+<div class="wrap">
+  <div class="crumbs"><a href="../index.html">Home</a><span><a href="../projects.html">Projects</a></span><span><a href="../projects.html#dcdc">Isolated DC/DC converters</a></span></div>
+  <div class="page-head">
+    <h1>Resonant CLLC converter</h1>
+    <p class="lead">Bidirectional resonant CLLC as an alternative to the DAB: tank transfer function, simulation in both power directions, losses, transformer sizing and an optimiser for a CLLLC tank.</p>
+    <div class="tags"><span class="tag">250 kW</span><span class="tag">resonant</span><span class="tag">800 V / 800 V</span><span class="tag">Simscape</span><span class="tag">MATLAB</span></div>
+  </div>
+  <div class="project-layout">
+    <div class="project-main">
+<figure class="frame">
+  <img src="../img/figures/cllc.jpg" alt="Resonant CLLC converter">
+  <figcaption>Single-phase bidirectional CLLC: full bridges on both sides, resonant capacitors and inductances around the medium-frequency transformer.</figcaption>
+</figure>
+
+<h2>What it is</h2>
+<p>The CLLC is a resonant, symmetric version of the isolated DC/DC stage: the series inductances and resonant capacitors on both sides of the transformer shape the current into a near-sinusoidal waveform, so the switches turn on at zero voltage and the turn-off current is small. Power flow and voltage gain are set by the switching frequency around resonance rather than by a phase shift.</p>
+<p>Two studies are included: a Simscape bench of a 250 kW CLLC stage, and an analytic state-space model of a CLLLC tank (800 V / 800 V, 250 kW) with an optimiser for the resonant elements and the transformer.</p>
+
+<h2>What the bench does</h2>
+<ul>
+  <li>Transfer function of the resonant tank and choice of the operating frequency range.</li>
+  <li>Simulation in both power directions with the same control code, device losses and spectrum.</li>
+  <li>First-cut sizing of the high-frequency transformer from the simulated volt-seconds and currents.</li>
+</ul>
+
+<h2>Figures</h2>
+<div class="fig-row">
+<figure class="frame"><a href="../img/figures/cllc_ctrl.jpg" target="_blank" rel="noopener"><img src="../img/figures/cllc_ctrl.jpg" alt="" loading="lazy"></a><figcaption>Simulation results in the forward direction: output current and voltage, device losses and the resonant-tank quantities.</figcaption></figure>
+</div>
+<nav class="pager" aria-label="Previous and next project"><a href="three-phase-dab.html">&larr; DAB3</a><a href="solid-state-transformers.html">SST &rarr;</a></nav>
+    </div>
+    <aside class="project-aside">
+      <div class="facts">
+        <h3>At a glance</h3>
+        <dl>
+<dt>Rated power</dt><dd>250 kW</dd>
+<dt>Tank</dt><dd>CLLC (bench), CLLLC (analytic model)</dd>
+<dt>Voltages</dt><dd>690 V AC application; 800 V / 800 V tank study</dd>
+<dt>Switching</dt><dd>12 kHz, double update</dd>
+<dt>Devices</dt><dd>SiC MOSFET / IGBT / ideal</dd>
+        </dl>
+        <h3 style="margin-top:1rem">Resources</h3>
+        <ul>
+<li><a href="https://github.com/pwr-control/advanced-dcdc-converters" target="_blank" rel="noopener">Repository: advanced-dcdc-converters</a></li>
+<li><a href="https://github.com/pwr-control/advanced-dcdc-converters/tree/main/analysis_resonant_cllc" target="_blank" rel="noopener">Folder: analysis_resonant_cllc</a></li>
+<li><a href="https://github.com/pwr-control/advanced-dcdc-converters/tree/main/analysis_single_phase_res_cllc" target="_blank" rel="noopener">Folder: analysis_single_phase_res_cllc (CLLLC optimiser)</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
+<!-- InstanceEndEditable -->
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; 2026 Davide Bagnara &middot; pwr-control.com &middot; Personal research work, shared as is.</div>
+    <ul>
+      <li><a href="https://github.com/pwr-control/" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/davide-bagnara-633353290/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="mailto:info@pwr-control.com">info@pwr-control.com</a></li>
+    </ul>
+  </div>
+</footer>
+<script>
+/* Marks the current section in the navigation (works on GitHub Pages and in local preview). */
+(function () {
+  var segs = location.pathname.split('/').filter(Boolean);
+  var last = (segs[segs.length - 1] || '').replace(/\.html$/, '');
+  var parent = segs.length > 1 ? segs[segs.length - 2] : '';
+  var section = (last === '' || last === 'index') ? 'home' : (parent === 'projects' ? 'projects' : last);
+  var links = document.querySelectorAll('.site-nav a[data-section]');
+  for (var i = 0; i < links.length; i++) {
+    if (links[i].getAttribute('data-section') === section) { links[i].setAttribute('aria-current', 'page'); }
+  }
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

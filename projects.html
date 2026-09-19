@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en"><!-- InstanceBegin template="/Templates/main.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Projects — pwr-control</title>
+<meta name="description" content="Power electronics and control projects: DAB, DAB3, CLLC, solid-state transformers, multilevel inverters, UPQC, grid-forming, sensorless PMSM control, adaptive control.">
+<!-- InstanceEndEditable -->
+<link rel="icon" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/logo.svg" alt="pwr-control logo">pwr-control<small>Power Electronics &amp; Control Systems Laboratory</small></a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html" data-section="home">Home</a></li>
+        <li><a href="projects.html" data-section="projects">Projects</a></li>
+        <li><a href="notes.html" data-section="notes">Notes</a></li>
+        <li><a href="about.html" data-section="about">About</a></li>
+        <li><a class="ext" href="https://github.com/pwr-control/" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+<!-- InstanceBeginEditable name="main" -->
+<div class="wrap">
+  <div class="page-head">
+    <p class="eyebrow">Projects</p>
+    <h1>Projects</h1>
+    <p class="lead">Simulation benches, control designs and studies, grouped by area. Each project links to its repository on GitHub and to the technical note that documents it.</p>
+  </div>
+<section id="dcdc">
+  <div class="section-head"><h2>Isolated DC/DC converters</h2></div>
+  <p class="muted" style="max-width:52em">Bidirectional isolated stages for the 250 kW class, 690 V AC application: the building blocks of the solid-state transformers and of the storage interfaces.</p>
+  <div class="grid">
+<a class="card" href="projects/dab.html">
+  <div class="thumb"><img src="img/figures/dab.jpg" alt="Single-phase dual active bridge" loading="lazy"></div>
+  <div class="body">
+    <h3>Single-phase dual active bridge</h3>
+    <p>250 kW isolated DC/DC stage — phase-shift modulation, ZVS analysis per device, loss and spectrum scripts.</p>
+    <div class="tags"><span class="tag">250 kW</span><span class="tag">SiC MOSFET</span><span class="tag">12 kHz</span><span class="tag">Simscape</span><span class="tag">C-Caller</span></div>
+  </div>
+</a>
+<a class="card" href="projects/three-phase-dab.html">
+  <div class="thumb"><img src="img/preview/three_phase_dab.jpg" alt="Three-phase dual active bridge (DAB3)" loading="lazy"></div>
+  <div class="body">
+    <h3>Three-phase dual active bridge (DAB3)</h3>
+    <p>750 kW three-phase DAB — AC-side waveforms, spectrum and animated transformer quantities.</p>
+    <div class="tags"><span class="tag">750 kW</span><span class="tag">three-phase</span><span class="tag">SiC MOSFET</span><span class="tag">Simscape</span><span class="tag">video</span></div>
+  </div>
+</a>
+<a class="card" href="projects/cllc.html">
+  <div class="thumb"><img src="img/preview/cllc.jpg" alt="Resonant CLLC converter" loading="lazy"></div>
+  <div class="body">
+    <h3>Resonant CLLC converter</h3>
+    <p>Bidirectional resonant DC/DC — tank design, both power directions, losses, transformer sizing and a CLLLC tank optimiser.</p>
+    <div class="tags"><span class="tag">250 kW</span><span class="tag">resonant</span><span class="tag">800 V / 800 V</span><span class="tag">Simscape</span><span class="tag">MATLAB</span></div>
+  </div>
+</a>
+  </div>
+</section>
+<section id="inverters">
+  <div class="section-head"><h2>Inverters and solid-state transformers</h2></div>
+  <p class="muted" style="max-width:52em">Single-phase inverters, multilevel topologies and the modular SST that is built from them.</p>
+  <div class="grid">
+<a class="card" href="projects/solid-state-transformers.html">
+  <div class="thumb"><img src="img/preview/sst_design_ctrl_fig4c.jpg" alt="Solid-state transformers" loading="lazy"></div>
+  <div class="body">
+    <h3>Solid-state transformers</h3>
+    <p>Modular SST — DAB or CLLC stages feeding T-type inverters, parallel on DC, series on AC, master/slave distributed control.</p>
+    <div class="tags"><span class="tag">modular</span><span class="tag">T-type</span><span class="tag">DAB / CLLC</span><span class="tag">distributed control</span><span class="tag">Simscape</span></div>
+  </div>
+</a>
+<a class="card" href="projects/flying-capacitor-multilevel.html">
+  <div class="thumb"><img src="img/preview/flying_capacitor_multilevel.jpg" alt="Flying-capacitor multilevel inverter" loading="lazy"></div>
+  <div class="body">
+    <h3>Flying-capacitor multilevel inverter</h3>
+    <p>Single-phase flying-capacitor half-bridge — pre-charge, phase-shifted modulation and capacitor-voltage balancing.</p>
+    <div class="tags"><span class="tag">multilevel</span><span class="tag">flying capacitor</span><span class="tag">pre-charge</span><span class="tag">modulation</span><span class="tag">Simscape</span></div>
+  </div>
+</a>
+<a class="card" href="projects/single-phase-inverter.html">
+  <div class="thumb"><img src="img/figures/single_phase.jpg" alt="Single-phase inverter and active front end" loading="lazy"></div>
+  <div class="body">
+    <h3>Single-phase inverter and active front end</h3>
+    <p>T-type single-phase inverter and single-phase AFE — vector PI control in the stationary frame with a harmonic-tracker observer.</p>
+    <div class="tags"><span class="tag">T-type</span><span class="tag">AFE</span><span class="tag">vector control</span><span class="tag">harmonic tracker</span><span class="tag">C-Caller</span></div>
+  </div>
+</a>
+<a class="card" href="projects/ups-6kva.html">
+  <div class="thumb"><img src="img/figures/ups_6kva.jpg" alt="Single-phase UPS, 6 kVA" loading="lazy"></div>
+  <div class="body">
+    <h3>Single-phase UPS, 6 kVA</h3>
+    <p>Electrothermal simulation of a 6 kVA UPS power chain — control architecture and component selection.</p>
+    <div class="tags"><span class="tag">6 kVA</span><span class="tag">single-phase</span><span class="tag">electrothermal</span><span class="tag">component selection</span></div>
+  </div>
+</a>
+  </div>
+</section>
+<section id="grid">
+  <div class="section-head"><h2>Power quality and grid interface</h2></div>
+  <p class="muted" style="max-width:52em">Converters that face the grid: what they can offer to the network and how they synchronise to it.</p>
+  <div class="grid">
+<a class="card" href="projects/flipped-upqc.html">
+  <div class="thumb"><img src="img/preview/flipped_upqc.jpg" alt="Flipped unified power quality conditioner (F-UPQC)" loading="lazy"></div>
+  <div class="body">
+    <h3>Flipped unified power quality conditioner (F-UPQC)</h3>
+    <p>Left-shunt UPQC — shunt converter for grid services, series converter for load-voltage stability; bench and paper.</p>
+    <div class="tags"><span class="tag">UPQC</span><span class="tag">power quality</span><span class="tag">ancillary services</span><span class="tag">FRT</span><span class="tag">paper</span></div>
+  </div>
+</a>
+<a class="card" href="projects/grid-forming.html">
+  <div class="thumb"><img src="img/figures/grid_forming.svg" alt="Active front end on weak grids and grid-forming control" loading="lazy"></div>
+  <div class="body">
+    <h3>Active front end on weak grids and grid-forming control</h3>
+    <p>AFE modules on grids from SCR 20 down to 2 — FRT tests, reactive-current steps, starting point for grid-forming control.</p>
+    <div class="tags"><span class="tag">AFE 250 kW</span><span class="tag">weak grid</span><span class="tag">FRT</span><span class="tag">resonant PI</span><span class="tag">dq-PLL</span></div>
+  </div>
+</a>
+<a class="card" href="projects/single-phase-pll.html">
+  <div class="thumb"><img src="img/preview/FHT_dqPLL_2.jpg" alt="First-harmonic-tracker dq-PLL" loading="lazy"></div>
+  <div class="body">
+    <h3>First-harmonic-tracker dq-PLL</h3>
+    <p>Single-phase grid synchronisation with an adaptive-filter observer; comparison of resonant PI, SOGI and DDSRF-PLL structures.</p>
+    <div class="tags"><span class="tag">PLL</span><span class="tag">single-phase</span><span class="tag">observer</span><span class="tag">50 Hz / 400 Hz</span><span class="tag">video</span></div>
+  </div>
+</a>
+  </div>
+</section>
+<section id="control">
+  <div class="section-head"><h2>Electrical machines and control</h2></div>
+  <p class="muted" style="max-width:52em">Observers and controllers for machines and for distributed-parameter systems, plus compact adaptive-control projects.</p>
+  <div class="grid">
+<a class="card" href="projects/pmsm-sensorless.html">
+  <div class="thumb"><img src="img/figures/pmsm_sensorless.svg" alt="Sensorless PMSM control" loading="lazy"></div>
+  <div class="body">
+    <h3>Sensorless PMSM control</h3>
+    <p>Five benches on one plant — SVPWM or MPC current control combined with back-EMF, EKF or nonlinear observers.</p>
+    <div class="tags"><span class="tag">PMSM</span><span class="tag">sensorless</span><span class="tag">MPC</span><span class="tag">EKF</span><span class="tag">nonlinear observer</span></div>
+  </div>
+</a>
+<a class="card" href="projects/adaptive-control.html">
+  <div class="thumb"><img src="img/figures/adaptive_control.svg" alt="Adaptive control and estimation" loading="lazy"></div>
+  <div class="body">
+    <h3>Adaptive control and estimation</h3>
+    <p>MRAC on an active suspension and on a textbook plant, harmonic-tracker design, coupled PDE/ODE thermal model.</p>
+    <div class="tags"><span class="tag">MRAC</span><span class="tag">Kalman filter</span><span class="tag">observers</span><span class="tag">PDE/ODE</span><span class="tag">MATLAB</span></div>
+  </div>
+</a>
+<a class="card" href="projects/string-actuated.html">
+  <div class="thumb"><img src="img/figures/string_actuated.svg" alt="Control of string-actuated systems" loading="lazy"></div>
+  <div class="body">
+    <h3>Control of string-actuated systems</h3>
+    <p>Systems actuated through a string or cable: PDE model coupled to rigid-body dynamics and its control, after Wang and Krstic.</p>
+    <div class="tags"><span class="tag">PDE</span><span class="tag">boundary control</span><span class="tag">cable dynamics</span><span class="tag">note</span></div>
+  </div>
+</a>
+  </div>
+</section>
+<section id="teaching">
+  <div class="section-head"><h2>Teaching</h2></div>
+  <p class="muted" style="max-width:52em">Lecture material and textbooks from the Advanced Control Engineering course.</p>
+  <div class="grid">
+<a class="card" href="projects/lectures.html">
+  <div class="thumb"><img src="img/figures/em_boundary_conditions.jpg" alt="Advanced Control Engineering — lectures and textbooks" loading="lazy"></div>
+  <div class="body">
+    <h3>Advanced Control Engineering — lectures and textbooks</h3>
+    <p>Lecture projects (MCI, 2019–2023) and the two companion textbooks: Advanced Control Engineering and Electromechanical Devices.</p>
+    <div class="tags"><span class="tag">state space</span><span class="tag">Kalman</span><span class="tag">LQR / MPC</span><span class="tag">observers</span><span class="tag">LaTeX</span></div>
+  </div>
+</a>
+  </div>
+</section>
+
+  <div class="note">
+    <strong>Foundations.</strong> All the benches use the shared <a href="https://github.com/pwr-control/library" target="_blank" rel="noopener">library</a> repository: Simscape components (semiconductors, passives with saturation, machines, transformers, batteries, fuel cells), masked Simulink power stages and controllers, the C code called from the C-Caller blocks, and the parameter layer used by the initialisation scripts. Add it to the MATLAB path with subfolders before opening any model.
+  </div>
+</div>
+<!-- InstanceEndEditable -->
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; 2026 Davide Bagnara &middot; pwr-control.com &middot; Personal research work, shared as is.</div>
+    <ul>
+      <li><a href="https://github.com/pwr-control/" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/davide-bagnara-633353290/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="mailto:info@pwr-control.com">info@pwr-control.com</a></li>
+    </ul>
+  </div>
+</footer>
+<script>
+/* Marks the current section in the navigation (works on GitHub Pages and in local preview). */
+(function () {
+  var segs = location.pathname.split('/').filter(Boolean);
+  var last = (segs[segs.length - 1] || '').replace(/\.html$/, '');
+  var parent = segs.length > 1 ? segs[segs.length - 2] : '';
+  var section = (last === '' || last === 'index') ? 'home' : (parent === 'projects' ? 'projects' : last);
+  var links = document.querySelectorAll('.site-nav a[data-section]');
+  for (var i = 0; i < links.length; i++) {
+    if (links[i].getAttribute('data-section') === section) { links[i].setAttribute('aria-current', 'page'); }
+  }
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

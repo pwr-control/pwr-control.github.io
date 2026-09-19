@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en"><!-- InstanceBegin template="/Templates/main.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>pwr-control — Power Electronics &amp; Control Systems Laboratory</title>
+<meta name="description" content="Open MATLAB/Simulink/Simscape models of power converters, electrical machines and their control, built to reproduce real operating conditions. Davide Bagnara.">
+<!-- InstanceEndEditable -->
+<link rel="icon" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/logo.svg" alt="pwr-control logo">pwr-control<small>Power Electronics &amp; Control Systems Laboratory</small></a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html" data-section="home">Home</a></li>
+        <li><a href="projects.html" data-section="projects">Projects</a></li>
+        <li><a href="notes.html" data-section="notes">Notes</a></li>
+        <li><a href="about.html" data-section="about">About</a></li>
+        <li><a class="ext" href="https://github.com/pwr-control/" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+<!-- InstanceBeginEditable name="main" -->
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Power Electronics &amp; Control Systems Laboratory</p>
+    <h1>Power converters, electrical machines and their control — modelled as they really behave.</h1>
+    <p class="lead">Open MATLAB / Simulink / Simscape models built to reproduce real operating conditions, from system level down to the switching devices, with the control code written in C as it would run on the target. Personal research work by Davide Bagnara, shared as is.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="projects.html">Browse the projects</a>
+      <a class="btn" href="notes.html">Technical notes</a>
+      <a class="btn" href="https://github.com/pwr-control/" target="_blank" rel="noopener">GitHub &#8599;</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="section-head"><h2>Featured work</h2><a class="more" href="projects.html">All projects &rarr;</a></div>
+  <div class="grid">
+<a class="card" href="projects/three-phase-dab.html">
+  <div class="thumb"><img src="img/preview/three_phase_dab.jpg" alt="Three-phase dual active bridge (DAB3)" loading="lazy"></div>
+  <div class="body">
+    <h3>Three-phase dual active bridge (DAB3)</h3>
+    <p>750 kW three-phase DAB — AC-side waveforms, spectrum and animated transformer quantities.</p>
+    <div class="tags"><span class="tag">750 kW</span><span class="tag">three-phase</span><span class="tag">SiC MOSFET</span><span class="tag">Simscape</span><span class="tag">video</span></div>
+  </div>
+</a>
+<a class="card" href="projects/solid-state-transformers.html">
+  <div class="thumb"><img src="img/preview/sst_design_ctrl_fig4c.jpg" alt="Solid-state transformers" loading="lazy"></div>
+  <div class="body">
+    <h3>Solid-state transformers</h3>
+    <p>Modular SST — DAB or CLLC stages feeding T-type inverters, parallel on DC, series on AC, master/slave distributed control.</p>
+    <div class="tags"><span class="tag">modular</span><span class="tag">T-type</span><span class="tag">DAB / CLLC</span><span class="tag">distributed control</span><span class="tag">Simscape</span></div>
+  </div>
+</a>
+<a class="card" href="projects/flipped-upqc.html">
+  <div class="thumb"><img src="img/preview/flipped_upqc.jpg" alt="Flipped unified power quality conditioner (F-UPQC)" loading="lazy"></div>
+  <div class="body">
+    <h3>Flipped unified power quality conditioner (F-UPQC)</h3>
+    <p>Left-shunt UPQC — shunt converter for grid services, series converter for load-voltage stability; bench and paper.</p>
+    <div class="tags"><span class="tag">UPQC</span><span class="tag">power quality</span><span class="tag">ancillary services</span><span class="tag">FRT</span><span class="tag">paper</span></div>
+  </div>
+</a>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="section-head"><h2>Areas</h2></div>
+  <div class="grid grid-tight">
+<a class="tile" href="projects.html#dcdc"><span class="num">01</span><h3>Isolated DC/DC converters</h3><p>Bidirectional isolated stages for the 250 kW class, 690 V AC application: the building blocks of the solid-state transformers and of the storage interfaces.</p></a>
+<a class="tile" href="projects.html#inverters"><span class="num">02</span><h3>Inverters and solid-state transformers</h3><p>Single-phase inverters, multilevel topologies and the modular SST that is built from them.</p></a>
+<a class="tile" href="projects.html#grid"><span class="num">03</span><h3>Power quality and grid interface</h3><p>Converters that face the grid: what they can offer to the network and how they synchronise to it.</p></a>
+<a class="tile" href="projects.html#control"><span class="num">04</span><h3>Electrical machines and control</h3><p>Observers and controllers for machines and for distributed-parameter systems, plus compact adaptive-control projects.</p></a>
+<a class="tile" href="projects.html#teaching"><span class="num">05</span><h3>Teaching</h3><p>Lecture material and textbooks from the Advanced Control Engineering course.</p></a>
+<a class="tile" href="https://github.com/pwr-control/library" target="_blank" rel="noopener"><span class="num">LIB</span><h3>Foundations: the library &#8599;</h3><p>Simscape components, masked Simulink blocks and the C code shared by every model. Add it to the MATLAB path first.</p></a>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>How the models are built</h2>
+    <div class="grid">
+      <div class="tile"><h3>Simscape components</h3><p>Semiconductors with loss and thermal models, magnetics with saturation, machines, batteries and fuel cells are custom Simscape components, so a control strategy is judged on realistic waveforms rather than on idealised blocks.</p></div>
+      <div class="tile"><h3>Control code in C</h3><p>Controllers, observers, PLLs and modulators run inside the models through C-Caller blocks. The same source is the code that runs on the target: simulated and deployed from one place.</p></div>
+      <div class="tile"><h3>Documented in LaTeX</h3><p>Every model has a technical note behind it: derivations, control design and simulation results, published as PDF next to the sources.</p></div>
+    </div>
+    <p class="small" style="margin-top:1.5rem">Everything depends on the shared <a href="https://github.com/pwr-control/library" target="_blank" rel="noopener">library</a> repository. Clone it, add it to the MATLAB path with subfolders, then clone the repository you are interested in and run its setup script. Requirements: MATLAB with Simulink, Simscape and Simscape Electrical.</p>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="section-head"><h2>Technical notes</h2><a class="more" href="notes.html">All notes &rarr;</a></div>
+  <ul class="list-plain">
+<li><a href="https://github.com/pwr-control/pwr-control/blob/main/docs/solid_state_transformers/solid_state_transformers.pdf" target="_blank" rel="noopener">Solid State Transformers: architecture, control and simulation results</a> <span class="muted small mono">PDF &middot; 31 pp</span></li>
+<li><a href="https://github.com/pwr-control/pwr-control/blob/main/docs/modularity/modularity.pdf" target="_blank" rel="noopener">Modularity: model and control architecture</a> <span class="muted small mono">PDF &middot; 54 pp</span></li>
+<li><a href="https://github.com/pwr-control/pwr-control/blob/main/docs/nonlinear_observers/nonlinear_observers.pdf" target="_blank" rel="noopener">Nonlinear Observers: application to hydrostatic transmissions and electrical machinery</a> <span class="muted small mono">PDF &middot; 55 pp</span></li>
+<li><a href="https://github.com/pwr-control/pwr-control/blob/main/docs/pmsm_motor_model_and_control/pmsm_ctrl_vctrl_state_observers.pdf" target="_blank" rel="noopener">PMSM: model and control strategies</a> <span class="muted small mono">PDF &middot; 29 pp</span></li>
+  </ul>
+</section>
+
+<section class="wrap">
+  <div class="section-head"><h2>About</h2><a class="more" href="about.html">More &rarr;</a></div>
+  <p class="narrow" style="margin:0">Davide Bagnara is a power electronics and control systems engineer with twenty years of industrial R&amp;D on high-power drives and grid-tied converters (250 kW – 1 MW), wide-bandgap devices, PMSM control and embedded firmware. Papers at PCIM Europe and ISIEA; patent on active damping for ropeway drive systems. Based in South Tyrol, Italy.</p>
+</section>
+<!-- InstanceEndEditable -->
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; 2026 Davide Bagnara &middot; pwr-control.com &middot; Personal research work, shared as is.</div>
+    <ul>
+      <li><a href="https://github.com/pwr-control/" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/davide-bagnara-633353290/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="mailto:info@pwr-control.com">info@pwr-control.com</a></li>
+    </ul>
+  </div>
+</footer>
+<script>
+/* Marks the current section in the navigation (works on GitHub Pages and in local preview). */
+(function () {
+  var segs = location.pathname.split('/').filter(Boolean);
+  var last = (segs[segs.length - 1] || '').replace(/\.html$/, '');
+  var parent = segs.length > 1 ? segs[segs.length - 2] : '';
+  var section = (last === '' || last === 'index') ? 'home' : (parent === 'projects' ? 'projects' : last);
+  var links = document.querySelectorAll('.site-nav a[data-section]');
+  for (var i = 0; i < links.length; i++) {
+    if (links[i].getAttribute('data-section') === section) { links[i].setAttribute('aria-current', 'page'); }
+  }
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

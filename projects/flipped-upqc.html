@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en"><!-- InstanceBegin template="/Templates/main.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Flipped unified power quality conditioner (F-UPQC) — pwr-control</title>
+<meta name="description" content="A left-shunt UPQC for active distribution networks: the shunt converter faces the grid and provides ancillary services, the series converter faces the load and stabilises its voltage. Simscape bench plus an IEEE-format paper.">
+<!-- InstanceEndEditable -->
+<link rel="icon" href="../img/favicon.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img src="../img/logo.svg" alt="pwr-control logo">pwr-control<small>Power Electronics &amp; Control Systems Laboratory</small></a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="../index.html" data-section="home">Home</a></li>
+        <li><a href="../projects.html" data-section="projects">Projects</a></li>
+        <li><a href="../notes.html" data-section="notes">Notes</a></li>
+        <li><a href="../about.html" data-section="about">About</a></li>
+        <li><a class="ext" href="https://github.com/pwr-control/" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+<!-- InstanceBeginEditable name="main" -->
+<div class="wrap">
+  <div class="crumbs"><a href="../index.html">Home</a><span><a href="../projects.html">Projects</a></span><span><a href="../projects.html#grid">Power quality and grid interface</a></span></div>
+  <div class="page-head">
+    <h1>Flipped unified power quality conditioner (F-UPQC)</h1>
+    <p class="lead">A left-shunt UPQC for active distribution networks: the shunt converter faces the grid and provides ancillary services, the series converter faces the load and stabilises its voltage. Simscape bench plus an IEEE-format paper.</p>
+    <div class="tags"><span class="tag">UPQC</span><span class="tag">power quality</span><span class="tag">ancillary services</span><span class="tag">FRT</span><span class="tag">paper</span></div>
+  </div>
+  <div class="project-layout">
+    <div class="project-main">
+<figure class="frame">
+  <img src="../img/figures/flipped_upqc.jpg" alt="Flipped unified power quality conditioner (F-UPQC)">
+  <figcaption>Flipping a UPQC: the shunt converter on the grid side provides ancillary services, the series converter on the load side provides stability; a battery behind an isolated DC/DC converter sits on the shared DC link.</figcaption>
+</figure>
+
+<h2>What it is</h2>
+<p>In the conventional UPQC the series converter faces the grid and the shunt converter faces the load. Flipping the arrangement (a left-shunt UPQC in Akagi's classification) changes what each converter is good for: the shunt converter, now on the grid side, can offer reactive power, harmonic mitigation and fault-ride-through behaviour to the distribution system operator, while the series converter, now on the load side, stabilises the load voltage against sags and swells.</p>
+<p>A shared DC link with a battery behind an isolated DC/DC converter makes the unit usable for local flexibility services as well.</p>
+
+<h2>What the repository contains</h2>
+<ul>
+  <li>The complete Simulink/Simscape bench of the system: three-phase shunt active filter, series voltage stabiliser with its transformer, DC link with DAB and battery, grid emulator with fault-ride-through test cases.</li>
+  <li>Control code in C: dq-PLL, current controllers, moving-average filters, double-integrator observer.</li>
+  <li>The paper <em>A Flipped Unified Power Quality Conditioner for Active Distribution Networks: Topology, Modelling, and Control Strategy</em> (IEEE conference format, LaTeX and PDF), which derives topology, model and control.</li>
+</ul>
+
+<h2>Video</h2>
+<a class="video" href="https://www.youtube.com/watch?v=2_LkWHoYVdM" target="_blank" rel="noopener">
+  <img src="https://img.youtube.com/vi/2_LkWHoYVdM/mqdefault.jpg" alt="Flipped UPQC simulation" loading="lazy">
+  <span><strong>Flipped UPQC simulation</strong><small>Grid and load quantities during a disturbance &middot; YouTube</small></span>
+</a>
+<nav class="pager" aria-label="Previous and next project"><a href="ups-6kva.html">&larr; UPS 6 kVA</a><a href="grid-forming.html">Grid-forming &rarr;</a></nav>
+    </div>
+    <aside class="project-aside">
+      <div class="facts">
+        <h3>At a glance</h3>
+        <dl>
+<dt>Application</dt><dd>690 V, active distribution network</dd>
+<dt>Shunt converter</dt><dd>Grid side: reactive power, harmonics, FRT</dd>
+<dt>Series converter</dt><dd>Load side: voltage stabilisation</dd>
+<dt>Storage</dt><dd>Battery through isolated DC/DC</dd>
+<dt>Outputs</dt><dd>EPS figures, spectra, MP4 animations</dd>
+        </dl>
+        <h3 style="margin-top:1rem">Resources</h3>
+        <ul>
+<li><a href="https://github.com/pwr-control/left-shunt-unified-power-quality-conditioner" target="_blank" rel="noopener">Repository: left-shunt-unified-power-quality-conditioner</a></li>
+<li><a href="https://github.com/pwr-control/left-shunt-unified-power-quality-conditioner/blob/main/doc/flipped_upqc_pcim.pdf" target="_blank" rel="noopener">Paper (PDF)</a></li>
+<li><a href="https://github.com/pwr-control/library" target="_blank" rel="noopener">Shared library (required)</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
+<!-- InstanceEndEditable -->
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; 2026 Davide Bagnara &middot; pwr-control.com &middot; Personal research work, shared as is.</div>
+    <ul>
+      <li><a href="https://github.com/pwr-control/" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/davide-bagnara-633353290/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="mailto:info@pwr-control.com">info@pwr-control.com</a></li>
+    </ul>
+  </div>
+</footer>
+<script>
+/* Marks the current section in the navigation (works on GitHub Pages and in local preview). */
+(function () {
+  var segs = location.pathname.split('/').filter(Boolean);
+  var last = (segs[segs.length - 1] || '').replace(/\.html$/, '');
+  var parent = segs.length > 1 ? segs[segs.length - 2] : '';
+  var section = (last === '' || last === 'index') ? 'home' : (parent === 'projects' ? 'projects' : last);
+  var links = document.querySelectorAll('.site-nav a[data-section]');
+  for (var i = 0; i < links.length; i++) {
+    if (links[i].getAttribute('data-section') === section) { links[i].setAttribute('aria-current', 'page'); }
+  }
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

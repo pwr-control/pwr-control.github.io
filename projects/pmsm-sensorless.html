@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"><!-- InstanceBegin template="/Templates/main.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Sensorless PMSM control — pwr-control</title>
+<meta name="description" content="Five benches on the same plant to compare modulator and observer choices: space-vector PWM with dq PI or model-predictive current control, and back-EMF observer, extended Kalman filter or nonlinear observer for rotor position and speed.">
+<!-- InstanceEndEditable -->
+<link rel="icon" href="../img/favicon.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img src="../img/logo.svg" alt="pwr-control logo">pwr-control<small>Power Electronics &amp; Control Systems Laboratory</small></a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="../index.html" data-section="home">Home</a></li>
+        <li><a href="../projects.html" data-section="projects">Projects</a></li>
+        <li><a href="../notes.html" data-section="notes">Notes</a></li>
+        <li><a href="../about.html" data-section="about">About</a></li>
+        <li><a class="ext" href="https://github.com/pwr-control/" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+<!-- InstanceBeginEditable name="main" -->
+<div class="wrap">
+  <div class="crumbs"><a href="../index.html">Home</a><span><a href="../projects.html">Projects</a></span><span><a href="../projects.html#control">Electrical machines and control</a></span></div>
+  <div class="page-head">
+    <h1>Sensorless PMSM control</h1>
+    <p class="lead">Five benches on the same plant to compare modulator and observer choices: space-vector PWM with dq PI or model-predictive current control, and back-EMF observer, extended Kalman filter or nonlinear observer for rotor position and speed.</p>
+    <div class="tags"><span class="tag">PMSM</span><span class="tag">sensorless</span><span class="tag">MPC</span><span class="tag">EKF</span><span class="tag">nonlinear observer</span></div>
+  </div>
+  <div class="project-layout">
+    <div class="project-main">
+<figure class="frame">
+  <img src="../img/figures/pmsm_sensorless.svg" alt="Sensorless PMSM control">
+  <figcaption>Structure common to the five benches: current control and modulator on the inverter side, an observer that reconstructs rotor position and speed from voltages and currents.</figcaption>
+</figure>
+
+<h2>What it is</h2>
+<p>Sensorless control of a permanent-magnet synchronous machine removes the position sensor and reconstructs rotor angle and speed from the electrical quantities. Which observer to use, and whether to pair it with a linear dq current controller or with a predictive one, is a design choice that is hard to make on paper. These benches put the alternatives on the same plant so that they can be compared on the same transients.</p>
+<p>The plant is a Simscape machine model driven by an inverter with device models, so the comparison includes the effect of PWM, dead time and losses rather than of an ideal voltage source.</p>
+
+<h2>The five benches</h2>
+<ul>
+  <li>Inverter side: space-vector PWM with dq PI current control, or model-predictive current control.</li>
+  <li>Observer side: back-EMF observer, extended Kalman filter, or nonlinear observer for rotor position and speed.</li>
+  <li>Each subfolder is a complete bench with its own <code>init_model.m</code>, plotting, loss and spectrum scripts. Induction-machine studies are planned on the same structure.</li>
+</ul>
+
+<nav class="pager" aria-label="Previous and next project"><a href="single-phase-pll.html">&larr; FHT dq-PLL</a><a href="adaptive-control.html">Adaptive control &rarr;</a></nav>
+    </div>
+    <aside class="project-aside">
+      <div class="facts">
+        <h3>At a glance</h3>
+        <dl>
+<dt>Machine</dt><dd>PMSM, 690 V class</dd>
+<dt>Modulators</dt><dd>SVPWM with dq PI; MPC</dd>
+<dt>Observers</dt><dd>Back-EMF, EKF, nonlinear</dd>
+<dt>Devices</dt><dd>Infineon FF1200R17IP5, Danfoss SKM1700MB20R4S2I4</dd>
+<dt>Code</dt><dd>C-Caller controllers, observers, PLL, modulators</dd>
+        </dl>
+        <h3 style="margin-top:1rem">Resources</h3>
+        <ul>
+<li><a href="https://github.com/pwr-control/pwr-control/blob/main/docs/pmsm_motor_model_and_control/pmsm_ctrl_vctrl_state_observers.pdf" target="_blank" rel="noopener">Note: PMSM: model and control strategies — vector control and state observers (29 pages)</a></li>
+<li><a href="https://github.com/pwr-control/control-of-electrical-machine" target="_blank" rel="noopener">Repository: control-of-electrical-machine</a></li>
+<li><a href="https://github.com/pwr-control/pwr-control/blob/main/docs/pmsm_motor_model_and_control/bemf_observer_and_parameters_mismatch.pdf" target="_blank" rel="noopener">PMSM: vector control, EMF-based observer and parameter-mismatch analysis (10 pages)</a></li>
+<li><a href="https://github.com/pwr-control/pwr-control/blob/main/docs/induction_motor_model_and_control/im_model_and_ctrl.pdf" target="_blank" rel="noopener">Induction Motor: modelization and parameter estimation (49 pages)</a></li>
+<li><a href="https://github.com/pwr-control/pwr-control/blob/main/docs/nonlinear_observers/nonlinear_observers.pdf" target="_blank" rel="noopener">Nonlinear Observers (55 pages)</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
+<!-- InstanceEndEditable -->
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; 2026 Davide Bagnara &middot; pwr-control.com &middot; Personal research work, shared as is.</div>
+    <ul>
+      <li><a href="https://github.com/pwr-control/" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/davide-bagnara-633353290/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="mailto:info@pwr-control.com">info@pwr-control.com</a></li>
+    </ul>
+  </div>
+</footer>
+<script>
+/* Marks the current section in the navigation (works on GitHub Pages and in local preview). */
+(function () {
+  var segs = location.pathname.split('/').filter(Boolean);
+  var last = (segs[segs.length - 1] || '').replace(/\.html$/, '');
+  var parent = segs.length > 1 ? segs[segs.length - 2] : '';
+  var section = (last === '' || last === 'index') ? 'home' : (parent === 'projects' ? 'projects' : last);
+  var links = document.querySelectorAll('.site-nav a[data-section]');
+  for (var i = 0; i < links.length; i++) {
+    if (links[i].getAttribute('data-section') === section) { links[i].setAttribute('aria-current', 'page'); }
+  }
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

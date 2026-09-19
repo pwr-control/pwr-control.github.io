@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en"><!-- InstanceBegin template="/Templates/main.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Flying-capacitor multilevel inverter — pwr-control</title>
+<meta name="description" content="Single-phase flying-capacitor multilevel half-bridge with output filter: pre-charge sequence, phase-shifted modulation and capacitor-voltage balancing studied in simulation.">
+<!-- InstanceEndEditable -->
+<link rel="icon" href="../img/favicon.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img src="../img/logo.svg" alt="pwr-control logo">pwr-control<small>Power Electronics &amp; Control Systems Laboratory</small></a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="../index.html" data-section="home">Home</a></li>
+        <li><a href="../projects.html" data-section="projects">Projects</a></li>
+        <li><a href="../notes.html" data-section="notes">Notes</a></li>
+        <li><a href="../about.html" data-section="about">About</a></li>
+        <li><a class="ext" href="https://github.com/pwr-control/" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+<!-- InstanceBeginEditable name="main" -->
+<div class="wrap">
+  <div class="crumbs"><a href="../index.html">Home</a><span><a href="../projects.html">Projects</a></span><span><a href="../projects.html#inverters">Inverters and solid-state transformers</a></span></div>
+  <div class="page-head">
+    <h1>Flying-capacitor multilevel inverter</h1>
+    <p class="lead">Single-phase flying-capacitor multilevel half-bridge with output filter: pre-charge sequence, phase-shifted modulation and capacitor-voltage balancing studied in simulation.</p>
+    <div class="tags"><span class="tag">multilevel</span><span class="tag">flying capacitor</span><span class="tag">pre-charge</span><span class="tag">modulation</span><span class="tag">Simscape</span></div>
+  </div>
+  <div class="project-layout">
+    <div class="project-main">
+<figure class="frame">
+  <img src="../img/figures/flying_capacitor_multilevel.jpg" alt="Flying-capacitor multilevel inverter">
+  <figcaption>Flying-capacitor multilevel half-bridge with output filter and the simulated waveforms of the flying-capacitor voltages, output voltage and current.</figcaption>
+</figure>
+
+<h2>What it is</h2>
+<p>A flying-capacitor multilevel inverter builds a multi-step output voltage from a single DC link by inserting or bypassing capacitors that float between the switch pairs. Each device only blocks a fraction of the DC-link voltage, the output has more levels than a two-level bridge and the effective switching frequency seen by the filter is multiplied by the number of cells.</p>
+<p>This study looks at a single-phase half-bridge with an output LC filter: how the flying capacitors are charged before the inverter can start, how the phase-shifted carriers keep their voltages balanced, and what the output looks like when it is done properly.</p>
+
+<h2>What the note covers</h2>
+<ul>
+  <li>Pre-charge sequence with series resistors and its timing.</li>
+  <li>Phase-shifted modulation of the cells and natural balancing of the capacitor voltages.</li>
+  <li>Device voltage stress and output-filter behaviour, from the simulation.</li>
+</ul>
+
+<h2>Figures</h2>
+<div class="fig-row">
+<figure class="frame"><a href="../img/figures/flying_capacitor_multilevel_modulation.jpg" target="_blank" rel="noopener"><img src="../img/figures/flying_capacitor_multilevel_modulation.jpg" alt="" loading="lazy"></a><figcaption>Phase-shifted carrier modulation: gate patterns of the switch pairs.</figcaption></figure>
+<figure class="frame"><a href="../img/figures/flying_capacitor_multilevel_precharge.jpg" target="_blank" rel="noopener"><img src="../img/figures/flying_capacitor_multilevel_precharge.jpg" alt="" loading="lazy"></a><figcaption>Pre-charge of the flying capacitors through the pre-charge resistors and the resulting device and capacitor voltages.</figcaption></figure>
+</div>
+<nav class="pager" aria-label="Previous and next project"><a href="solid-state-transformers.html">&larr; SST</a><a href="single-phase-inverter.html">Single-phase inverter &rarr;</a></nav>
+    </div>
+    <aside class="project-aside">
+      <div class="facts">
+        <h3>At a glance</h3>
+        <dl>
+<dt>Topology</dt><dd>Single-phase flying-capacitor half-bridge</dd>
+<dt>Output</dt><dd>LC filter</dd>
+<dt>Modulation</dt><dd>Phase-shifted carriers</dd>
+<dt>Study</dt><dd>Pre-charge, balancing, stress</dd>
+        </dl>
+        <h3 style="margin-top:1rem">Resources</h3>
+        <ul>
+<li><a href="https://github.com/pwr-control/pwr-control/blob/main/docs/multilevel_flying_capacitors/single_phase_flying_capacitor_multilevel_inverter.pdf" target="_blank" rel="noopener">Note: Flying Capacitor Multilevel Single-Phase Inverter (22 pages)</a></li>
+<li><a href="https://github.com/pwr-control/pwr-control/tree/main/docs/multilevel_flying_capacitors" target="_blank" rel="noopener">Technical notes on GitHub</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
+<!-- InstanceEndEditable -->
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; 2026 Davide Bagnara &middot; pwr-control.com &middot; Personal research work, shared as is.</div>
+    <ul>
+      <li><a href="https://github.com/pwr-control/" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/davide-bagnara-633353290/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="mailto:info@pwr-control.com">info@pwr-control.com</a></li>
+    </ul>
+  </div>
+</footer>
+<script>
+/* Marks the current section in the navigation (works on GitHub Pages and in local preview). */
+(function () {
+  var segs = location.pathname.split('/').filter(Boolean);
+  var last = (segs[segs.length - 1] || '').replace(/\.html$/, '');
+  var parent = segs.length > 1 ? segs[segs.length - 2] : '';
+  var section = (last === '' || last === 'index') ? 'home' : (parent === 'projects' ? 'projects' : last);
+  var links = document.querySelectorAll('.site-nav a[data-section]');
+  for (var i = 0; i < links.length; i++) {
+    if (links[i].getAttribute('data-section') === section) { links[i].setAttribute('aria-current', 'page'); }
+  }
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>
